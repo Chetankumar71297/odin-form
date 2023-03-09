@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Sign-Up-Form</title>
 </head>
 <body>
@@ -21,12 +22,14 @@
             </div>
         </div>
         <div class="form-container">
-            <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. 
-                Sign up now to get started.</p>
-            <p>You know you want to.</p> 
+            <div class="form-uppertext">
+                <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.
+                    Sign up now to get started.</p><br>
+                <p>You know you want to.</p>
+            </div> 
             <div class="form-controls">
                 <p>Let's do this!</p>
-                <form action="/" method="post">
+                <form id="myForm" method="POST">
                     <div>
                         <label for="first">FIRST NAME</label>
                         <input type="text" id="first" name="firstName"/>
@@ -36,16 +39,25 @@
                         <input type="text" id="last" name="lastName"/>
                     </div>
                     <div>
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="emailAddress">
+                    </div>
+                    <div>
+                        <label for="phone-no">PHONE NUMBER</label>
+                        <input type="tel" id="phone-no" name="phoneNumber" pattern="^[789]\d{9}$" placeholder="8267342317">
+                    </div>
+                    <div>
                         <label for="password">PASSWORD</label>
-                        <input type="text" id="password" name="password" required/>
+                        <input type="password" id="password" name="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required />
                     </div>
                     <div>
                         <label for="re-check">CONFIRM PASSWORD</label>
-                        <input type="text" id="re-check" name="reEnteredPassword" required/>
+                        <input type="password" id="re-check" name="reEnteredPassword" required/>
+                        <small id="confirmPassword-feedback" style="color: red;"></small>
                     </div>
                 </form>
-                <button type="submit">Create Account</button>
-                <p>Already have an account?<span>Log in</span></p>
+                <button type="submit" value="submit">Create Account</button>
+                <p>Already have an account?<span style="color: rgb(169, 169, 169);"> Log in</span></p>
             </div> 
         </div>
     </div>
